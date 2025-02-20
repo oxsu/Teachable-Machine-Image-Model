@@ -1,0 +1,189 @@
+/* General Styles */
+body {
+  background-color: #1e1e1e;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: url(test3.gif) no-repeat center center fixed;
+  background-size: 100% auto; /* Width adjusts fully, height scales automatically */
+}
+
+/* Center Box */
+.background-div {
+  width: 500px;
+  height: 550px;
+  background: #1f221f;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: absolute;
+  z-index: 10;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Left and Right Boxes (Initially Hidden) */
+.background-div-left, .background-div-right {
+  width: 500px;
+  height: 550px;
+  background: #1f221f;
+  border-radius: 15px;
+  display: none; /* Initially hidden */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: absolute;
+  justify-content: center; /* Centers vertically */
+  align-items: center; /* Centers horizontally */
+}
+
+#webcam-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+#webcam-container canvas {
+  width: 480px !important; /* Increase size */
+  height: 530px !important; /* Increase size */
+  border-radius: 10px; /* Add rounded corners */
+}
+
+/* Prediction Container */
+#label-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 20px;
+  font-family: "JetBrains Mono", monospace;
+  color: #FFFAFA;
+}
+
+/* Progress Bar Container */
+.progress {
+  background: #ddd;
+  height: 35px; /* Increased height */
+  width: 90%; /* Make it wider */
+  color: white;
+  border-radius: 20px;
+  margin: 10px 0; /* Increase spacing */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Progress Bar Fill */
+.progress-done {
+  font-weight: bold;
+  color: #fff;
+  height: 100%;
+  background: linear-gradient(to right, #E0C3FC, #8EC5FC);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 0;
+  transition: width 0.5s ease-in-out;
+  font-size: 18px; /* Increase font size */
+}
+
+/* Positioning for Split Effect */
+.background-div-left {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.background-div-right {
+  right: 50%;
+  transform: translateX(50%);
+}
+
+/* Animation - Move Apart */
+.move-left {
+  animation: moveLeft 1s forwards;
+}
+
+.move-right {
+  animation: moveRight 1s forwards;
+}
+
+@keyframes moveLeft {
+  to {
+    left: 17%;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveRight {
+  to {
+    right: 17%;
+    transform: translateX(0);
+  }
+}
+
+/* Center Text */
+.text {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 75px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
+.button-30 {
+  align-items: center;
+  appearance: none;
+  background-color: #FCFCFD;
+  border-radius: 8px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #3d423d;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 80px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 45px;
+}
+
+.button-30:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.button-30:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-7px);
+}
+
+.button-30:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
